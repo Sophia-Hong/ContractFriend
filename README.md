@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# ContractFriend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ContractFriend is an AI-powered contract review application that helps users analyze lease agreements quickly and efficiently.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Smart contract analysis using AI
+- Automatic identification of key terms and potential risks
+- User-friendly interface with drag-and-drop file upload
+- Comprehensive report generation
+- Premium features with detailed analysis
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React with TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Framer Motion for animations
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+1. Clone the repository:
+```bash
+git clone https://github.com/Sophia-Hong/ContractFriend.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+```bash
+cd contractfriend
+npm install
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+  ├── components/      # React components
+  │   ├── Hero.tsx
+  │   ├── Navbar.tsx
+  │   ├── Footer.tsx
+  │   ├── Upload.tsx
+  │   ├── Results.tsx
+  │   └── ValueProposition.tsx
+  ├── App.tsx         # Main application component
+  └── index.css       # Global styles
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
