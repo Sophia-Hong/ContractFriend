@@ -1,101 +1,195 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import Navigation from '@/components/Navigation'
+import { ArrowRight, Shield, Clock, FileSearch, Upload, Brain, FileText } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex min-h-screen flex-col">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center pt-24">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2946&auto=format&fit=crop"
+            alt="Modern apartment interior"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        {/* Content */}
+        <div className="container relative z-10 py-20">
+          <div className="max-w-3xl text-white">
+            <h1 className="mb-6">
+              <span className="text-[var(--primary-light)]">Smart Contract Analysis</span>{' '}
+              for Modern Renters
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 md:mb-12">
+              Understand your rental agreement in minutes. Our AI-powered analysis helps you make informed decisions and protect your rights.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/upload" className="btn-primary">
+                Analyze Your Contract
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link href="/about" className="btn-secondary-light">
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="mb-6">Why Choose ContractFriend?</h2>
+            <p className="text-xl text-gray-600">
+              We make understanding your rental agreement simple, fast, and reliable.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="feature-card">
+              <div className="w-12 h-12 bg-[var(--primary)]/10 rounded-xl flex items-center justify-center mb-6">
+                <Clock className="w-6 h-6 text-[var(--primary)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Quick Analysis</h3>
+              <p className="text-gray-600">
+                Get detailed insights about your rental agreement in minutes, not hours.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="w-12 h-12 bg-[var(--primary)]/10 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-[var(--primary)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Know Your Rights</h3>
+              <p className="text-gray-600">
+                Understand your rights and obligations as a tenant with clear explanations.
+              </p>
+            </div>
+
+            <div className="feature-card">
+              <div className="w-12 h-12 bg-[var(--primary)]/10 rounded-xl flex items-center justify-center mb-6">
+                <FileSearch className="w-6 h-6 text-[var(--primary)]" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Smart Detection</h3>
+              <p className="text-gray-600">
+                Identify potential issues and unfair terms before signing your lease.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="section gradient-subtle">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="mb-6">How It Works</h2>
+            <p className="text-xl text-gray-600">
+              Get insights about your rental agreement in three simple steps
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="feature-card group hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?q=80&w=1000&auto=format&fit=crop"
+                  alt="Upload document"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                  <Upload className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-3xl font-bold text-[var(--primary)] mr-4">1</span>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Upload</h3>
+                  <p className="text-gray-600">
+                    Simply upload your rental agreement in PDF or Word format. We support all standard document formats.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-card group hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop"
+                  alt="AI Analysis"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                  <Brain className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-3xl font-bold text-[var(--primary)] mr-4">2</span>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Analyze</h3>
+                  <p className="text-gray-600">
+                    Our AI thoroughly analyzes your document, identifying key terms, potential issues, and important clauses.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-card group hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop"
+                  alt="Review results"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-[var(--primary)]" />
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-3xl font-bold text-[var(--primary)] mr-4">3</span>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Review</h3>
+                  <p className="text-gray-600">
+                    Get a comprehensive report with clear explanations, recommendations, and potential negotiation points.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="mb-6">Ready to Understand Your Rental Agreement?</h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Don't sign a lease without understanding it first. Let ContractFriend help you make an informed decision.
+            </p>
+            <Link href="/upload" className="btn-primary">
+              Analyze Your Contract Now
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
